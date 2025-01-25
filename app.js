@@ -1,6 +1,10 @@
 const path = require('path');
 
 const express = require('express');
+const dotenv = require('dotenv');
+
+// get config vars
+dotenv.config();
 const bodyParser = require('body-parser');
 
 const errorController = require('./controllers/error');
@@ -35,7 +39,7 @@ app.use(shopRoutes);
 app.use(errorController.get404);
 
 mongoose
-  .connect("mongodb+srv://Saketh:Saketh1234@cluster0.kdqhj.mongodb.net/shop?retryWrites=true&w=majority&appName=Cluster0")
+  .connect(process.env.a)
   .then(result =>{
     app.listen(3001)
     console.log("port is running")
