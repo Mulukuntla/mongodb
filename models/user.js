@@ -1,4 +1,4 @@
-const mongodb=require("mongodb")
+/*const mongodb=require("mongodb")
 const getdb=require("../util/database").getDb;
 const ObjectId=mongodb.ObjectId
 class User{
@@ -35,9 +35,10 @@ class User{
       })
 
 
-  
+
   }
   deleteItemFromCart(productId){
+    console.log("Hii")
     const updatedCartItems=this.cart.items.filter(item =>{
       return item.productId.toString() !==productId.toString()
 
@@ -127,4 +128,5 @@ class User{
 
 
 }
+*/
 module.exports=User;
