@@ -41,6 +41,16 @@ userSchema.methods.addToCart=function(product){
 
 
 }
+userSchema.methods.removeFromCart=function(productId){
+  const updatedCartItems=this.cart.items.filter(item =>{
+    return item.productId.toString() !==productId.toString()
+
+  })
+  console.log("updated items---------->",updatedCartItems)
+  this.cart.items=updatedCartItems
+  return this.save()
+
+}
 /*const mongodb=require("mongodb")
 const getdb=require("../util/database").getDb;
 const ObjectId=mongodb.ObjectId
