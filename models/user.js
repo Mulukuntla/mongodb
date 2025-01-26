@@ -51,6 +51,8 @@ userSchema.methods.removeFromCart=function(productId){
   return this.save()
 
 }
+
+
 /*const mongodb=require("mongodb")
 const getdb=require("../util/database").getDb;
 const ObjectId=mongodb.ObjectId
